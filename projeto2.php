@@ -9,6 +9,8 @@ $registros =[
 $usuarioLogado = null;
 $listaProd = [];
 $cont = 0;
+$verificarLog = [];
+$data = date('d/m/Y H:i:s');
 
 
 //função para escolher
@@ -71,6 +73,7 @@ function vender(){
         $voltar = readline("Deseja continuar?\n 1- SIM\n 2- NÃO \n");
         $listaProd [$produto] = $valor;
         $cont += $valor;
+        log("O $produto foi vendido por R$$valor as $data");
     }while($voltar != 2);
     print_r($listaProd); 
     echo"O total da compra foi de R$$cont\n";  
@@ -109,13 +112,15 @@ function menu(){
     else if($escolha == "3"){
         log($escolha);
     }
-    else if($escolha == "4"){
+    else if($escolha == "4"){;
         deslogar($escolha);
     }
 }
 
-
-
+function log($escolha){
+    global $verificarLog;
+    $verificarLog[];
+}
 
 while(true){
     if ($usuarioLogado == null) {
